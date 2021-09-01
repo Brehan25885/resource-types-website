@@ -29,4 +29,6 @@ jobs:
         yarn build
         cd ..
         go build -v
+    - name: go test
+      run: go test -v 
 
