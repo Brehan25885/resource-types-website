@@ -19,6 +19,9 @@ jobs:
         go-version: 1.17
     - name: go build
       run: |
-        cd warehouse
+        cd warehouse/web
+        yarn install
+        yarn build
+        cd ..
         go build -v
 
