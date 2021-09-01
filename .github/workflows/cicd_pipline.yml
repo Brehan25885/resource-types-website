@@ -23,6 +23,7 @@ jobs:
         repository: concourse/resource-types
         path: ./warehouse/resource-types
     - name: go build
+      needs: clone resources type repo
       run: |
         cd warehouse/web
         yarn install
@@ -30,6 +31,7 @@ jobs:
         cd ..
         go build -v
     - name: go test
+      needs: [go build,clone resources type repo]
       run: |
         cd warehouse
         go test -v
