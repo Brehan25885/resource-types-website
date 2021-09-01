@@ -17,6 +17,11 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: 1.17
+    - name: clone resources type repo
+      uses: actions/checkout@master
+      with:
+        repository: concourse/resource-types
+        path: ./warehouse/resource-types
     - name: go build
       run: |
         cd warehouse/web
