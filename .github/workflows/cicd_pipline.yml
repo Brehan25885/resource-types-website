@@ -30,5 +30,7 @@ jobs:
         cd ..
         go build -v
     - name: go test
-      run: go test -v 
+      run: |
+        cd warehouse
+        go test -v 
 
