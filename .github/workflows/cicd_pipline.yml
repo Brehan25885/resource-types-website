@@ -31,7 +31,7 @@ jobs:
         yarn install
         yarn build
         cd ..
-        go build -v
+        go build -v -o public
 
 
     - name: go test
@@ -42,6 +42,7 @@ jobs:
         TOKEN: ${{ secrets.GRAPHQL_TOKEN }}
     - name: Deploy 🚀
       uses: peaceiris/actions-gh-pages@v3
+      if: ${{ github.ref == 'refs/heads/main' }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./warehouse/dutyfree
+        publish_dir: ./public
