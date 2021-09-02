@@ -29,7 +29,6 @@ jobs:
         yarn build
         cd ..
         go build -v
-        ./dutyfree
       env: 
         GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
