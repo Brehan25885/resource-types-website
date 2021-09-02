@@ -29,14 +29,12 @@ jobs:
         yarn build
         cd ..
         go build -v
-      env: 
-        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 
     - name: go test
+      env: 
+        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
         cd warehouse
         go test -v
-      env: 
-        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
