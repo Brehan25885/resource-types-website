@@ -34,6 +34,8 @@ jobs:
         go build -v -o public
         pwd
         ls
+        cd public 
+        ls
 
 
     - name: go test
@@ -46,4 +48,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./warehouse/web/public
+        publish_dir: ./warehouse/public
