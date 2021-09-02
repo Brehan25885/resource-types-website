@@ -33,6 +33,7 @@ jobs:
         cd ..
         go build -v -o public
         pwd
+        ls
 
 
     - name: go test
