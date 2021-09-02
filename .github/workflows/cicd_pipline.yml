@@ -40,3 +40,9 @@ jobs:
         go test -v
       env:
         TOKEN: ${{ secrets.GRAPHQL_TOKEN }}
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages
+        folder: dutyfree
+        clean: true
