@@ -27,6 +27,7 @@ jobs:
         path: ./warehouse/resource-types
     - name: go build
       run: |
+        export GH_TOKEN=${{ secrets.ACCESS_TOKEN }}
         cd warehouse/web
         yarn install
         yarn build
