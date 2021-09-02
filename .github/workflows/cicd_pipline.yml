@@ -32,6 +32,7 @@ jobs:
         yarn build
         cd ..
         go build -v -o public
+        pwd
 
 
     - name: go test
