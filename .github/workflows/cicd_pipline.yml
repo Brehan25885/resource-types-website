@@ -41,8 +41,7 @@ jobs:
       env:
         TOKEN: ${{ secrets.GRAPHQL_TOKEN }}
     - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@4.1.4
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        branch: gh-pages
-        folder: dutyfree
-        clean: true
+        github_token: ${{ secrets.GRAPHQL_TOKEN }}
+        publish_dir: ./dutyfree
