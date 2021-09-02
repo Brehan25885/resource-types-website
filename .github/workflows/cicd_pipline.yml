@@ -23,6 +23,8 @@ jobs:
         repository: concourse/resource-types
         path: ./warehouse/resource-types
     - name: go build
+      env: 
+        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
         cd warehouse/web
         yarn install
@@ -32,8 +34,6 @@ jobs:
 
 
     - name: go test
-      env: 
-        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
         cd warehouse
         go test -v
