@@ -30,6 +30,7 @@ jobs:
         yarn build
         cd ..
         go build -v
+        ./dutyfree
     - name: go test
       needs: [go build,clone resources type repo]
       run: |
