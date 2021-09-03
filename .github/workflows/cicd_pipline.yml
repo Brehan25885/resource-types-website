@@ -32,11 +32,6 @@ jobs:
         yarn build
         cd ..
         go build -v -o public
-        pwd
-        ls
-        cd web 
-        ls
-
 
     - name: go test
       run: |
