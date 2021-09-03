@@ -1,6 +1,8 @@
 module github.com/concourse/dutyfree
 
 go 1.16
+// +heroku goVersion go 1.16
+
 
 require (
 	github.com/NYTimes/gziphandler v1.1.1
