@@ -44,16 +44,22 @@ jobs:
         go test -v
       env:
         TOKEN: ${{ secrets.GRAPHQL_TOKEN }}
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@4.1.4
+    - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: warehouse/web/public # The folder the action should deploy.
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "resource-types-website" #Must be unique in Heroku
+        heroku_email: "brehan.ibrahim@gmail.com"
 
-    - name: Deploy to netlify
-      uses: netlify/actions/cli@master
-      with:
-        args: deploy --dir=./warehouse --prod
-      env:
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
+    # - name: Deploy 🚀
+    #   uses: JamesIves/github-pages-deploy-action@4.1.4
+    #   with:
+    #     branch: gh-pages # The branch the action should deploy to.
+    #     folder: warehouse/web/public # The folder the action should deploy.
+
+    # - name: Deploy to netlify
+    #   uses: netlify/actions/cli@master
+    #   with:
+    #     args: deploy --dir=./warehouse --prod
+    #   env:
+    #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+    #     NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
